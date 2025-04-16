@@ -1,0 +1,16 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const _7lab_transport_js_1 = require("./7lab_transport.js");
+var Car = _7lab_transport_js_1.Transport.Car;
+var Owner = _7lab_transport_js_1.Transport.Owner;
+const me = new Owner("Panakshin", "Andrey", "Valerievich", "30.03.2006", _7lab_transport_js_1.Transport.DocType.passport, 1234, 344444);
+const alexander = new Owner("kostylev", "Alexander", "Nikolaevich", "28.10.2005", _7lab_transport_js_1.Transport.DocType.passport, 1234, 335462);
+const car1 = new Car("Toyota", "Camry", 2024, "1HGCM82633A123456", 123456, me, _7lab_transport_js_1.Transport.BodyType.Sedan, _7lab_transport_js_1.Transport.CarClass.Luxury);
+const car2 = new Car("BMW", "X5", 2022, "5UXCR6C53M9F20939", 67890, me, _7lab_transport_js_1.Transport.BodyType.Coupe, _7lab_transport_js_1.Transport.CarClass.Luxury);
+const car3 = new Car("Audi", "A4", 2021, "WAUZB4FF4FN012345", 11223, alexander, _7lab_transport_js_1.Transport.BodyType.Hatchback, _7lab_transport_js_1.Transport.CarClass.Standard);
+const car4 = new Car("Lada", "Vesta", 2015, "XTAGFL110KY313115", 44321, me, _7lab_transport_js_1.Transport.BodyType.Sedan, _7lab_transport_js_1.Transport.CarClass.Economy);
+const car5 = new Car("Mitsubishi", "Outlander", 2021, "JA4AD31G2MZ012345", 543210, alexander, _7lab_transport_js_1.Transport.BodyType.Coupe, _7lab_transport_js_1.Transport.CarClass.Luxury);
+const vehicleStorage = new _7lab_transport_js_1.Transport.VehicleStorage([car1, car2, car3, car4, car5]);
+console.log(vehicleStorage.sortByBrand());
+console.log(vehicleStorage.getVehicleBySurname("milekhin"));
+console.log(car1.getShortInfo());
